@@ -25,7 +25,7 @@ namespace Lekcja9
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Node nowyWęzeł = new Node(w1);
+            Miasto nowyWęzeł = new Miasto(w1);
             drzewo.Nodes.Add(nowyWęzeł);
         }
 
