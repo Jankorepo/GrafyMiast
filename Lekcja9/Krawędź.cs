@@ -25,6 +25,5 @@ namespace Lekcja9
         {
             return n == this.start ? this.koniec : this.start;
         }
-
     }
 }

@@ -15,8 +15,9 @@ namespace Lekcja9
         
         
         Graf drzewo = new Graf();
-        int wartość, w2, w3, w4,w5,w6;
-        
+        string w1, w2, w3,w5,w6;
+        int w4, x;
+
         public Form1()
         {
             InitializeComponent();
@@ -24,12 +25,18 @@ namespace Lekcja9
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Node nowyWęzeł = new Node(Convert.ToInt32(wartość));
+            Node nowyWęzeł = new Node(w1);
             drzewo.Nodes.Add(nowyWęzeł);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < drzewo.Nodes.Count; i++)
+            {
+                x = i;
+                if (drzewo.Nodes[i] == w2)
+                    break;
+            }
             Krawędź łączenie = new Krawędź(drzewo.Nodes[w2], drzewo.Nodes[w3], w4);
             drzewo.Krawędzie.Add(łączenie);
         }
@@ -41,35 +48,33 @@ namespace Lekcja9
 
 
 
-
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            wartość = Convert.ToInt32(textBox1.Text);
+            w1 = textBox1.Text;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            w2 = Convert.ToInt32(textBox2.Text);
+            w2 = textBox2.Text;
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            w3 = Convert.ToInt32(textBox3.Text);
+            w3 = textBox3.Text;
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            w4 = Convert.ToInt32(textBox4.Text);
+            w4 = textBox4.Text;
         }
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            w5= Convert.ToInt32(textBox5.Text);
+            w5= textBox5.Text;
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            w6 = Convert.ToInt32(textBox6.Text);
+            w6 =textBox6.Text;
         }
     }
 }

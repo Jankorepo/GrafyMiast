@@ -8,14 +8,14 @@ namespace Lekcja9
 {
     class Node
     {
-        public int wartość;
-        public Node(int wartość)
+        public string wartość;
+        public Node(string wartość)
         {
             this.wartość = wartość;
         }
         public override string ToString()
         {
-            return this.wartość.ToString();
+            return this.wartość;
         }
     }
 }
