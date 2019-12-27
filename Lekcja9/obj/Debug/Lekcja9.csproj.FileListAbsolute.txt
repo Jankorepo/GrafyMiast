@@ -1,0 +1,9 @@
+D:\Programy\Projekty\Algorytmy i struktury danych, Szypulski\Lekcja9\bin\Debug\Lekcja9.exe.config
+D:\Programy\Projekty\Algorytmy i struktury danych, Szypulski\Lekcja9\bin\Debug\Lekcja9.exe
+D:\Programy\Projekty\Algorytmy i struktury danych, Szypulski\Lekcja9\bin\Debug\Lekcja9.pdb
+D:\Programy\Projekty\Algorytmy i struktury danych, Szypulski\Lekcja9\obj\Debug\Lekcja9.csprojAssemblyReference.cache
+D:\Programy\Projekty\Algorytmy i struktury danych, Szypulski\Lekcja9\obj\Debug\Lekcja9.Form1.resources
+D:\Programy\Projekty\Algorytmy i struktury danych, Szypulski\Lekcja9\obj\Debug\Lekcja9.Properties.Resources.resources
+D:\Programy\Projekty\Algorytmy i struktury danych, Szypulski\Lekcja9\obj\Debug\Lekcja9.csproj.GenerateResource.cache
+D:\Programy\Projekty\Algorytmy i struktury danych, Szypulski\Lekcja9\obj\Debug\Lekcja9.exe
+D:\Programy\Projekty\Algorytmy i struktury danych, Szypulski\Lekcja9\obj\Debug\Lekcja9.pdb
