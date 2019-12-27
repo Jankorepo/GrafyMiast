@@ -11,7 +11,6 @@ namespace Lekcja9
         public List<Miasto> Nodes;
         public List<OdległościMiędzyMiastowe> Krawędzie;
         public List<Miasto> odwiedzone;
-        public List<Miasto> zwracanieWęzłów;
         public Dictionary<Miasto, PołączenieMiast> odległości;
         public GrafMiast()
         {
@@ -25,12 +24,9 @@ namespace Lekcja9
         public string AlgorytmDijkstry(Miasto start, Miasto koniec)
         {
             this.odwiedzone = new List<Miasto>();
-            this.zwracanieWęzłów = new List<Miasto>();
             this.odległości = new Dictionary<Miasto, PołączenieMiast>();
             this.AD(start);
-            this.ZwróćKolejnoWęzły(koniec);
-            return "Najszybsza droga między miastami  "+start+" i "+koniec+"  to: "+string.Join("-", this.zwracanieWęzłów)
-                +" i wynosi ona " +Convert.ToInt32(odległości[koniec].odległość)+" km";
+            return "Najszybsza droga między miastami  "+start+" i "+koniec+" wynosi " +Convert.ToInt32(odległości[koniec].odległość)+" km";
         }
         public void AD(Miasto n)
         {
@@ -57,14 +53,6 @@ namespace Lekcja9
                     AD(odległości.OrderBy(x => x.Value.odległość).First(x => !this.odwiedzone.Contains(x.Key)).Key);
             }
         }
-        public void ZwróćKolejnoWęzły(Miasto ostatni)
-        {
-            zwracanieWęzłów.Add(ostatni);
-            Miasto poprzednik = this.odległości[ostatni].n;
-            if (poprzednik != null)
-                ZwróćKolejnoWęzły(poprzednik);
-            else
-                zwracanieWęzłów.Reverse();
-        }
+
     }
 }
