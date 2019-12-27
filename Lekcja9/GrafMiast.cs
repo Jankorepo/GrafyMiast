@@ -12,6 +12,8 @@ namespace Lekcja9
         public List<OdległościMiędzyMiastowe> Krawędzie;
         public List<Miasto> odwiedzone;
         public Dictionary<Miasto, PołączenieMiast> odległości;
+        public Miasto tmp1 = null, tmp2 = null;
+        public List<string> M;
         public GrafMiast()
         {
             Nodes = new List<Miasto>();
@@ -53,6 +55,27 @@ namespace Lekcja9
                     AD(odległości.OrderBy(x => x.Value.odległość).First(x => !this.odwiedzone.Contains(x.Key)).Key);
             }
         }
+        public void WczytajPlik()
+        {
+            string[] x = new string[3];
+            string[] SpisWszystkichPołączeń = System.IO.File.ReadAllLines("Połączenia.txt");
+            foreach (string danePołączenie in SpisWszystkichPołączeń)
+            {
+                
+                x = danePołączenie.Split(',');
 
+                tmp1 = new Miasto(x[0]);
+                
+                // do poprawki bo Nodes ma po kilka takich samych elementów pomimo uzywania contains
+                tmp2 = new Miasto(x[1]);
+                if (!this.Nodes.Contains(tmp2))
+                    this.Nodes.Add(tmp2);
+                if (!this.Nodes.Contains(tmp1))
+                    this.Nodes.Add(tmp1);
+
+
+                this.Krawędzie.Add(new OdległościMiędzyMiastowe(tmp1, tmp2, Convert.ToInt32(x[2])));
+            }
+        }
     }
 }
