@@ -1,4 +1,5 @@
 Reszel,Olsztyn,100
 Olsztyn,Kraków,700
 Kraków,Gdańsk,780
-Biskupiec,Reszek,50
+Biskupiec,Reszel,100
+Gdańsk,Biskupiec,500
