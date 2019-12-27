@@ -16,7 +16,7 @@ namespace Lekcja9
         
         Graf drzewo = new Graf();
         string w1, w2, w3,w5,w6;
-        int w4, x;
+        int w4, tmp1,tmp2;
 
         public Form1()
         {
@@ -33,17 +33,25 @@ namespace Lekcja9
         {
             for (int i = 0; i < drzewo.Nodes.Count; i++)
             {
-                x = i;
-                if (drzewo.Nodes[i] == w2)
-                    break;
+                if (drzewo.Nodes[i].wartość == w2)
+                    tmp1 = i;
+                if (drzewo.Nodes[i].wartość == w3)
+                    tmp2 = i;
             }
-            Krawędź łączenie = new Krawędź(drzewo.Nodes[w2], drzewo.Nodes[w3], w4);
+            Krawędź łączenie = new Krawędź(drzewo.Nodes[tmp1], drzewo.Nodes[tmp2], w4);
             drzewo.Krawędzie.Add(łączenie);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(drzewo.AlgorytmDijkstry(drzewo.Nodes[w5], drzewo.Nodes[w6]));
+            for (int i = 0; i < drzewo.Nodes.Count; i++)
+            {
+                if (drzewo.Nodes[i].wartość == w5)
+                    tmp1 = i;
+                if (drzewo.Nodes[i].wartość == w6)
+                    tmp2 = i;
+            }
+            MessageBox.Show(drzewo.AlgorytmDijkstry(drzewo.Nodes[tmp1], drzewo.Nodes[tmp2]));
         }
 
 
@@ -65,7 +73,7 @@ namespace Lekcja9
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            w4 = textBox4.Text;
+            w4 = Convert.ToInt32(textBox4.Text);
         }
         private void textBox5_TextChanged(object sender, EventArgs e)
         {

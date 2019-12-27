@@ -30,7 +30,7 @@ namespace Lekcja9
             this.AD(start);
             this.ZwróćKolejnoWęzły(koniec);
             return "Najszybsza droga między węzłami  "+start+" i "+koniec+"  to: "+string.Join(" ", this.zwracanieWęzłów)
-                +" i wynosi ona " +Convert.ToInt32(odległości[koniec].odległość)+" jed.";
+                +" i wynosi ona " +Convert.ToInt32(odległości[koniec].odległość)+" km";
         }
         public void AD(Node n)
         {

@@ -7,3 +7,12 @@ D:\Programy\Projekty\Algorytmy i struktury danych, Szypulski\Lekcja9\obj\Debug\L
 D:\Programy\Projekty\Algorytmy i struktury danych, Szypulski\Lekcja9\obj\Debug\Lekcja9.csproj.GenerateResource.cache
 D:\Programy\Projekty\Algorytmy i struktury danych, Szypulski\Lekcja9\obj\Debug\Lekcja9.exe
 D:\Programy\Projekty\Algorytmy i struktury danych, Szypulski\Lekcja9\obj\Debug\Lekcja9.pdb
+C:\Users\Adam\Desktop\GrafyMiast\Lekcja9\obj\Debug\Lekcja9.csprojAssemblyReference.cache
+C:\Users\Adam\Desktop\GrafyMiast\Lekcja9\obj\Debug\Lekcja9.Form1.resources
+C:\Users\Adam\Desktop\GrafyMiast\Lekcja9\obj\Debug\Lekcja9.Properties.Resources.resources
+C:\Users\Adam\Desktop\GrafyMiast\Lekcja9\obj\Debug\Lekcja9.csproj.GenerateResource.cache
+C:\Users\Adam\Desktop\GrafyMiast\Lekcja9\obj\Debug\Lekcja9.exe
+C:\Users\Adam\Desktop\GrafyMiast\Lekcja9\obj\Debug\Lekcja9.pdb
+C:\Users\Adam\Desktop\GrafyMiast\Lekcja9\bin\Debug\Lekcja9.exe.config
+C:\Users\Adam\Desktop\GrafyMiast\Lekcja9\bin\Debug\Lekcja9.exe
+C:\Users\Adam\Desktop\GrafyMiast\Lekcja9\bin\Debug\Lekcja9.pdb
