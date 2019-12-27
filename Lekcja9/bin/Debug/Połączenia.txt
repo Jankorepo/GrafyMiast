@@ -1,8 +1,4 @@
 Reszel,Olsztyn,100
-Reszel,Kętrzyn,25
-Reszel,Warszawa,300
-Reszel,Ełk,150
-Olsztyn,Biskupiec,50
-Ełk,Bartoszyce,70
-Bartoszyce,Mręgowo,100
-Olsztyn,Gdańsk,180
+Olsztyn,Kraków,700
+Kraków,Gdańsk,780
+Biskupiec,Reszek,50

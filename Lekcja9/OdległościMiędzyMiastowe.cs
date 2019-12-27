@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Lekcja9
 {
-    class Krawędź
+    class OdległościMiędzyMiastowe
     {
         public Miasto start;
         public Miasto koniec;
         public int waga = 1;
-        public Krawędź(Miasto start, Miasto koniec, int waga = 1)
+        public OdległościMiędzyMiastowe(Miasto start, Miasto koniec, int waga = 1)
         {
             this.start = start;
             this.koniec = koniec;

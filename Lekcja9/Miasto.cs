@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Lekcja9
 {
-    class Node
+    class Miasto
     {
         public string wartość;
-        public Node(string wartość)
+        public Miasto(string wartość)
         {
             this.wartość = wartość;
         }

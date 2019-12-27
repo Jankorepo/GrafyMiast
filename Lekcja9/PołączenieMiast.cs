@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Lekcja9
 {
-    class Para
+    class PołączenieMiast
     {
-        public Node n;
+        public Miasto n;
         public int odległość;
-        public Para (Node n, int odl)
+        public PołączenieMiast (Miasto n, int odl)
         {
             this.n = n;
             this.odległość = odl;

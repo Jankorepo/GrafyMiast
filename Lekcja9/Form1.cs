@@ -14,75 +14,68 @@ namespace Lekcja9
     {
         
         
-        Graf drzewo = new Graf();
-        string w1, w2, w3,w5,w6;
-        int w4, tmp1,tmp2;
-
+        GrafMiast Mapa = new GrafMiast();
+        string wartość1,wartość2;
+        Miasto tmp1,tmp2;
+        string gdzieJestBłąd = "";
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Miasto nowyWęzeł = new Miasto(w1);
-            drzewo.Nodes.Add(nowyWęzeł);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < drzewo.Nodes.Count; i++)
-            {
-                if (drzewo.Nodes[i].wartość == w2)
-                    tmp1 = i;
-                if (drzewo.Nodes[i].wartość == w3)
-                    tmp2 = i;
-            }
-            Krawędź łączenie = new Krawędź(drzewo.Nodes[tmp1], drzewo.Nodes[tmp2], w4);
-            drzewo.Krawędzie.Add(łączenie);
+            WczytajPliki();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < drzewo.Nodes.Count; i++)
+            for (int i = 0; i < Mapa.Nodes.Count; i++)
             {
-                if (drzewo.Nodes[i].wartość == w5)
-                    tmp1 = i;
-                if (drzewo.Nodes[i].wartość == w6)
-                    tmp2 = i;
+                if (Mapa.Nodes[i].wartość == wartość1)
+                    tmp1 = Mapa.Nodes[i];
+                if (Mapa.Nodes[i].wartość == wartość2)
+                    tmp2 = Mapa.Nodes[i];
             }
-            MessageBox.Show(drzewo.AlgorytmDijkstry(drzewo.Nodes[tmp1], drzewo.Nodes[tmp2]));
+            if (gdzieJestBłąd != "")
+            MessageBox.Show("Brak miasta lub literówa w nazwie! Linijka z błędem: "+ gdzieJestBłąd);
+            else
+            MessageBox.Show(Mapa.AlgorytmDijkstry(tmp1,tmp2));
         }
 
 
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public void WczytajPliki()
         {
-            w1 = textBox1.Text;
+            string[] miasta = System.IO.File.ReadAllLines("Miasta.txt");
+            foreach (var tmpMiasto in miasta)
+            {
+                Mapa.Nodes.Add(new Miasto(tmpMiasto));
+            }
+            string[] x = new string[3];
+            string[] SpisWszystkichPołączeń = System.IO.File.ReadAllLines("Połączenia.txt");
+            foreach (string danePołączenie in SpisWszystkichPołączeń)
+            {
+                x = danePołączenie.Split(',');
+
+                for (int i = 0; i < Mapa.Nodes.Count; i++)
+                {
+                    if (Mapa.Nodes[i].wartość == x[0])
+                        tmp1 = Mapa.Nodes[i];
+                    if (Mapa.Nodes[i].wartość == x[1])
+                        tmp2 = Mapa.Nodes[i];
+                }
+                if (tmp1 != null && tmp2 != null)
+                    Mapa.Krawędzie.Add(new OdległościMiędzyMiastowe(tmp1, tmp2, Convert.ToInt32(x[2])));
+                else
+                    gdzieJestBłąd = danePołączenie;
+                tmp1 = tmp2 = null;
+            }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            w2 = textBox2.Text;
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            w3 = textBox3.Text;
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-            w4 = Convert.ToInt32(textBox4.Text);
-        }
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            w5= textBox5.Text;
+            wartość1 = textBox5.Text;
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            w6 =textBox6.Text;
+            wartość2 = textBox6.Text;
         }
     }
 }
