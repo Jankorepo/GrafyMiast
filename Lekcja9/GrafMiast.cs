@@ -11,8 +11,8 @@ namespace Lekcja9
         public List<Miasto> Nodes;
         public List<OdległościMiędzyMiastowe> Krawędzie;
         public List<Miasto> odwiedzone;
-        public List<Miasto> zwracanieWęzłów;
         public Dictionary<Miasto, PołączenieMiast> odległości;
+        Miasto tmp1, tmp2;
         public GrafMiast()
         {
             Nodes = new List<Miasto>();
@@ -25,12 +25,9 @@ namespace Lekcja9
         public string AlgorytmDijkstry(Miasto start, Miasto koniec)
         {
             this.odwiedzone = new List<Miasto>();
-            this.zwracanieWęzłów = new List<Miasto>();
             this.odległości = new Dictionary<Miasto, PołączenieMiast>();
             this.AD(start);
-            this.ZwróćKolejnoWęzły(koniec);
-            return "Najszybsza droga między miastami  " + start + " i " + koniec + "  to: " + string.Join("-", this.zwracanieWęzłów)
-                + " i wynosi ona " + Convert.ToInt32(odległości[koniec].odległość) + " km";
+            return "Najszybsza droga między miastami  " + start + " i " + koniec + "  wynosi " + Convert.ToInt32(odległości[koniec].odległość) + " km";
         }
         public void AD(Miasto n)
         {
@@ -57,14 +54,29 @@ namespace Lekcja9
                     AD(odległości.OrderBy(x => x.Value.odległość).First(x => !this.odwiedzone.Contains(x.Key)).Key);
             }
         }
-        public void ZwróćKolejnoWęzły(Miasto ostatni)
-        {
-            zwracanieWęzłów.Add(ostatni);
-            Miasto poprzednik = this.odległości[ostatni].n;
-            if (poprzednik != null)
-                ZwróćKolejnoWęzły(poprzednik);
-            else
-                zwracanieWęzłów.Reverse();
-        }
+        public void WczytajPliki()
+            {
+                string[] miasta = System.IO.File.ReadAllLines("Miasta.txt");
+                foreach (var tmpMiasto in miasta)
+                {
+                   this.Nodes.Add(new Miasto(tmpMiasto));
+                }
+                string[] x = new string[3];
+                string[] SpisWszystkichPołączeń = System.IO.File.ReadAllLines("Połączenia.txt");
+                foreach (string danePołączenie in SpisWszystkichPołączeń)
+                {
+                    x = danePołączenie.Split(',');
+
+                    for (int i = 0; i < this.Nodes.Count; i++)
+                    {
+                        if (this.Nodes[i].wartość == x[0])
+                            tmp1 = this.Nodes[i];
+                        if (this.Nodes[i].wartość == x[1])
+                            tmp2 = this.Nodes[i];
+                    }
+                    this.Krawędzie.Add(new OdległościMiędzyMiastowe(tmp1, tmp2, Convert.ToInt32(x[2])));
+                    tmp1 = tmp2 = null;
+                }
+            }
     }
 }
