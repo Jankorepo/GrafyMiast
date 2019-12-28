@@ -15,5 +15,6 @@ namespace Lekcja9
             this.n = n;
             this.odległość = odl;
         }
+
     }
 }
