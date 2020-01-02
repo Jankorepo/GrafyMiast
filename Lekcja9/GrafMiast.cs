@@ -22,12 +22,12 @@ namespace Lekcja9
         {
             return this.Krawędzie.Where(k => k.start == n || k.koniec == n).ToList();
         }
-        public string AlgorytmDijkstry(Miasto start, Miasto koniec)
+        public int AlgorytmDijkstry(Miasto start, Miasto koniec)
         {
             this.odwiedzone = new List<Miasto>();
             this.odległości = new Dictionary<Miasto, PołączenieMiast>();
             this.AD(start);
-            return "Najszybsza droga między miastami  " + start + " i " + koniec + "  wynosi " + Convert.ToInt32(odległości[koniec].odległość) + " km";
+            return Convert.ToInt32(odległości[koniec].odległość);
         }
         public void AD(Miasto n)
         {

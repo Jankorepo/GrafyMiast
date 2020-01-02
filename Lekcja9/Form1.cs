@@ -33,7 +33,7 @@ namespace Lekcja9
                     tmp2 = Mapa.Nodes[i];
             }
             
-            MessageBox.Show(Mapa.AlgorytmDijkstry(tmp1, tmp2));
+            MessageBox.Show(Convert.ToString(Mapa.AlgorytmDijkstry(tmp1, tmp2)));
         }
 
 
