@@ -33,6 +33,7 @@ namespace Lekcja9
         {
             if (this.odwiedzone.Contains(n))
                 return;
+            var g = 12;
             if (odwiedzone.Count == 0)
                 this.odległości.Add(n, new PołączenieMiast(null, 0));
             this.odwiedzone.Add(n);
